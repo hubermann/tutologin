@@ -1,0 +1,22 @@
+<h1>Profile</h1>
+<p>Modificar perfil de user</p>
+
+<% if @user.errors.any? %>
+	<ul class="Signup_Errors">
+		<% for message_error in @user.errors.full_messages %>
+			<p class="error_msg">* <%= message_error %></p>
+		<% end %>
+	</ul>
+<% end %>
+
+
+<p><strong><%= @user.nombre %> <%= @user.apellido %></strong> - <%= @user.email %></p>
+
+
+<%= form_for @user do |f| %>
+<p><%= label_tag :new_password %></p>
+<p><%= f.password_field :password %></p>
+<p><%= label_tag :password_confirmation %></p>
+<p><%= f.password_field :password_confirmation %></p>
+<p><%= submit_tag 'Crear cuenta' %></p>
+<% end %>

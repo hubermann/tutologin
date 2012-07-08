@@ -1,0 +1,23 @@
+<% if @user.errors.any? %>
+	<ul class="Signup_Errors">
+		<% for message_error in @user.errors.full_messages %>
+			<p class="error_msg">* <%= message_error %></p>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @user do |f| %>
+<p><%= label_tag :nombre %></p>
+<p><%= f.text_field :nombre %></p>
+<p><%= label_tag :apellido %></p>
+<p><%= f.text_field :apellido %></p>
+<p><%= label_tag :email %></p>
+<p><%= f.text_field :email %></p>
+<p><%= label_tag :email_confirmation %></p>
+<p><%= f.text_field :email_confirmation %></p>
+<p><%= label_tag :password %></p>
+<p><%= f.password_field :password %></p>
+<p><%= label_tag :password_confirmation %></p>
+<p><%= f.password_field :password_confirmation %></p>
+<p><%= submit_tag 'Crear cuenta' %></p>
+<% end %>

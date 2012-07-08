@@ -1,0 +1,11 @@
+<h1>Session#login</h1>
+<p>Find me in app/views/session/login.html.erb</p>
+
+<form action="/check_login" method="post">
+	
+<input type="text" name="user_email" id="user_email">
+<input type="password" name="user_password" id="user_password">
+<input type="hidden" name="return_to" id="return_to" value="<%= session[:return_to] %>">
+<button type="submit">Send</button>
+
+</form>

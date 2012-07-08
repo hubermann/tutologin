@@ -1,0 +1,14 @@
+<h2>Usuarios</h2>
+
+
+<% @users.each do |user| %>
+<p><%= user.nombre %></p>
+<p><%= user.apellido %></p>
+<p><%= user.email %></p>
+<p><%= user.encrypted_password %></p>
+<p><%= user.salt %></p>
+
+<%= link_to 'eliminar', user, :confirm => 'desea eliminar ?', :method => :delete%>
+<hr>
+<% end %>
+
